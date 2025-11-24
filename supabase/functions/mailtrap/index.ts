@@ -2,7 +2,7 @@ const MAILTRAP_API_KEY = Deno.env.get('MAILTRAP_API_KEY');
 
 if (!MAILTRAP_API_KEY) {
   console.error('MAILTRAP_API_KEY is not set');
-  process.exit(1)
+  throw new Error('MAILTRAP_API_KEY is not set');
 }
 
 const handler = async (_request: Request): Promise<Response> => {
